@@ -5,14 +5,15 @@ use yii\base\InvalidConfigException;
 $this->title = 'Test';
 echo $this->render('inc');
 
-class Anyone
+class Anyone // создаем новый класс
 {
-    public function init()
+    public function init()  // создаем родительскую функцию
     {
+        /*какой-то код*/
     }
 }
 
-class Translation extends Anyone
+class Translation extends Anyone  // наследуемся от класса Anyone
 {
     const DETECT_YA_URL = 'https://translate.yandex.net/api/v1.5/tr.json/detect';
     const TRANSLATE_YA_URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate';
@@ -25,7 +26,6 @@ class Translation extends Anyone
 
         if (empty($this->key)) {
             throw new InvalidConfigException("Filed <b>$this->key</b> is required");
-//            InvalidConfigException представляет собой исключение, вызванное неправильной конфигурацией объекта.
         }
     }
 
